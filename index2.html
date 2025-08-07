@@ -42,11 +42,16 @@
     <div class="form-field">
       <select id="block" name="block" required>
         <option value="" disabled selected>Select your Block</option>
-        <option value="A">Block A</option>
-        <option value="B">Block B</option>
-        <option value="C">Block C</option>
-        <option value="D">Block D</option>
-        <!-- Add more blocks as needed -->
+        <option value="A1">A1</option>
+        <option value="A2">A2</option>
+        <option value="A3">A3</option>
+        <option value="B1">B1</option>
+        <option value="B2">B2</option>
+        <option value="B3">B3</option>
+        <option value="C1">C1</option>
+        <option value="C2">C2</option>
+        <option value="C3">C3</option>
+        <option value="C4">C4</option>
       </select>
     </div>
 
@@ -60,12 +65,15 @@
       const name = document.getElementById("name").value;
       const block = document.getElementById("block").value;
 
-      // Optional: you can store or log this info if needed
-      console.log("Name:", name);
-      console.log("Block:", block);
+      if (!name || !block) {
+        alert("Please fill in all fields.");
+        return;
+      }
 
-      // Redirect to UPI payment
+      // ✅ UPI link gets triggered here
       const upiLink = "upi://pay?pa=9980888443@ptaxis&pn=SampadaTalwalkar&cu=INR";
+
+      // Redirect to UPI – mobile apps (like GPay, PhonePe) will pick it up
       window.location.href = upiLink;
     }
   </script>
