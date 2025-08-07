@@ -14,4 +14,60 @@
       margin: 20px 0;
     }
     input, select {
-      pa
+      padding: 10px;
+      font-size: 16px;
+      width: 250px;
+    }
+    .button {
+      background-color: #4CAF50;
+      padding: 15px 25px;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🙏 Ganpati Utsav 2025 🙏</h1>
+  <p>Thank you for supporting our celebration!</p>
+
+  <form onsubmit="handleSubmit(event)">
+    <div class="form-field">
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+    </div>
+
+    <div class="form-field">
+      <select id="block" name="block" required>
+        <option value="" disabled selected>Select your Block</option>
+        <option value="A">Block A</option>
+        <option value="B">Block B</option>
+        <option value="C">Block C</option>
+        <option value="D">Block D</option>
+        <!-- Add more blocks as needed -->
+      </select>
+    </div>
+
+    <button type="submit" class="button">Submit & Pay</button>
+  </form>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const block = document.getElementById("block").value;
+
+      // Optional: you can store or log this info if needed
+      console.log("Name:", name);
+      console.log("Block:", block);
+
+      // Redirect to UPI payment
+      const upiLink = "upi://pay?pa=9980888443@ptaxis&pn=SampadaTalwalkar&cu=INR";
+      window.location.href = upiLink;
+    }
+  </script>
+</body>
+</html>
